@@ -1,0 +1,5 @@
+Component,Manufacturer,Part Number,Quantity,Notes
+Capacitor,Capacitor Co.,C1234,10,For filtering
+Resistor,Resistor Inc.,R5678,5,For voltage division
+Transistor,Transistor Corp.,T9012,2,For amplification
+Inductor,Inductor Ltd.,L3456,1,For smoothing

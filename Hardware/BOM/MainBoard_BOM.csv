@@ -1,0 +1,5 @@
+Part Number,Description,Quantity,Supplier
+IC1,Quantum Processor,1,QuantumCorp
+R1,10k Ohm Resistor,4,DigiKey
+C1,100nF Capacitor,4,DigiKey
+Q1,N-Channel MOSFET,2,Mouser

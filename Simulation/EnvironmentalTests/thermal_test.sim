@@ -1,0 +1,30 @@
+```python
+# Import necessary libraries
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import odeint
+
+# Define the system parameters
+mass = 1.0  # kg
+heat_capacity = 1.0  # J/kg/K
+initial_temperature = 300.0  # K
+ambient_temperature = 273.0  # K
+heat_transfer_coefficient = 0.1  # W/K
+
+# Define the system of equations
+def system(temperature, time):
+    heat_flow = heat_transfer_coefficient * (ambient_temperature - temperature)
+    return heat_flow / (mass * heat_capacity)
+
+# Define the time array
+time = np.linspace(0, 100, 1000)  # s
+
+# Solve the system of equations
+temperature = odeint(system, initial_temperature, time)
+
+# Plot the results
+plt.plot(time, temperature)
+plt.xlabel('Time (s)')
+plt.ylabel('Temperature (K)')
+plt.show()
+```

@@ -1,0 +1,32 @@
+```python
+# Import necessary libraries
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import odeint
+
+# Define the system parameters
+mass = 1.0  # kg
+radiation_constant = 5.67e-8  # W/m^2/K^4
+surface_area = 1.0  # m^2
+emissivity = 0.8  # dimensionless
+initial_temperature = 300.0  # K
+ambient_temperature = 0.0  # K (in space)
+
+# Define the radiation heat transfer equation
+def heat_transfer(temperature, time):
+    return -emissivity * radiation_constant * surface_area * (temperature**4 - ambient_temperature**4) / (mass * heat_capacity)
+
+# Define the time array
+time = np.linspace(0, 10000, 1000)  # s
+
+# Solve the differential equation
+temperature = odeint(heat_transfer, initial_temperature, time)
+
+# Plot the results
+plt.plot(time, temperature)
+plt.xlabel('Time (s)')
+plt.ylabel('Temperature (K)')
+plt.title('Radiation Test Simulation')
+plt.grid(True)
+plt.show()
+```
